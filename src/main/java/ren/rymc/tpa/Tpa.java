@@ -43,7 +43,7 @@ public final class Tpa extends JavaPlugin implements Listener, CommandExecutor, 
         loadCommand();
         Bukkit.getPluginManager().registerEvents(this, this);
         if (config.getBoolean("metrics",defaultConfig.getBoolean("metrics"))){
-            Metrics metrics = new Metrics(this, 1234);
+            Metrics metrics = new Metrics(this, 16561);
             metrics.addCustomChart(new Metrics.SimplePie("chart_id", () -> "My value"));
         }
     }
