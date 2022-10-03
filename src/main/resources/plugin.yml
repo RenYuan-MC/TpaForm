@@ -1,0 +1,7 @@
+name: Tpa
+version: '${project.version}'
+main: ren.rymc.tpa.Tpa
+api-version: 1.13
+depend: [ floodgate ]
+authors: [ RENaa_FD ]
+description: "任渊TPA基岩版兼容插件"
