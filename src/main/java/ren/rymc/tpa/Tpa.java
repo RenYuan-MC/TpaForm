@@ -181,8 +181,8 @@ public final class Tpa extends JavaPlugin implements Listener, CommandExecutor, 
         if (player == null) return;
         UUID uuid = player.getUniqueId();
         if (!FloodgateApi.getInstance().isFloodgatePlayer(uuid)) return;
-        tpaMode = tpaMode.replace("/" + configList.get("tpa-command"),langList.get("tpa"));
-        tpaMode = tpaMode.replace("/" + configList.get("tpa-here-command"), langList.get("tpa-here"));
+        if (tpaMode.equals("/" + configList.get("tpa-command"))) tpaMode = langList.get("tpa");
+        if (tpaMode.equals("/" + configList.get("tpa-here-command"))) tpaMode = langList.get("tpa-here");
         FloodgateApi.getInstance().getPlayer(uuid).sendForm(
                 SimpleForm.builder()
                         .title(langList.get("title"))
