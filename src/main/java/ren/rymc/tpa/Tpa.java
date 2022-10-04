@@ -94,6 +94,7 @@ public final class Tpa extends JavaPlugin implements Listener, CommandExecutor, 
             return;
         }
         tpaui.setExecutor(this);
+        tpaui.setTabCompleter(this);
     }
 
     @SuppressWarnings("NullableProblems")
