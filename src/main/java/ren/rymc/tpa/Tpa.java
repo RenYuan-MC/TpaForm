@@ -121,18 +121,6 @@ public final class Tpa extends JavaPlugin implements Listener, CommandExecutor, 
     }
 
     @EventHandler( priority = EventPriority.LOWEST )
-    public void TpaMainMenuTask(PlayerCommandPreprocessEvent event) {
-        UUID uuid = event.getPlayer().getUniqueId();
-        if (!FloodgateApi.getInstance().isFloodgatePlayer(uuid)) return;
-        String message = event.getMessage().trim().toLowerCase(Locale.ROOT);
-        String[] messages = message.split(" ");
-        if (!messages[0].equals("/tpaui")) return;
-        if (Bukkit.getOnlinePlayers().size() <= 1) return;
-        event.setCancelled(true);
-        sendTpaMenu(event.getPlayer());
-    }
-
-    @EventHandler( priority = EventPriority.LOWEST )
     public void TpaCompletionAndApplication(PlayerCommandPreprocessEvent event) {
         String message = event.getMessage().trim().toLowerCase(Locale.ROOT);
         String[] messages = message.split(" ");
