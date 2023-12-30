@@ -1,6 +1,7 @@
 package ltd.rymc.form.tpa.forms;
 
 import ltd.rymc.form.tpa.TpaForm;
+import ltd.rymc.form.tpa.event.TpaFormReceiveEvent;
 import ltd.rymc.form.tpa.form.RForm;
 import ltd.rymc.form.tpa.form.RSimpleForm;
 import ltd.rymc.form.tpa.tpa.TpaMode;
@@ -36,5 +37,14 @@ public class TpaReceiveForm extends RSimpleForm {
         int id = response.clickedButtonId();
         String command = id == 0 ? TpaMode.getAcceptCommand(mode) : TpaMode.getDenyCommand(mode);
         Bukkit.dispatchCommand(bukkitPlayer,String.format(command,fromPlayer.getName()));
+    }
+
+    @Override
+    public void send(){
+        if (player == null) return;
+        TpaFormReceiveEvent event = new TpaFormReceiveEvent(bukkitPlayer, fromPlayer, mode);
+        Bukkit.getPluginManager().callEvent(event);
+        if (event.isCancelled()) return;
+        player.sendForm(builder);
     }
 }
