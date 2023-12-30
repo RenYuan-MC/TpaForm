@@ -1,15 +1,13 @@
-name: Tpa
+name: TpaForm
 version: '${project.version}'
-main: ren.rymc.tpa.Tpa
+main: ltd.rymc.form.tpa.TpaForm
 api-version: 1.13
 depend: [ floodgate ]
 authors: [ RENaa_FD ]
-description: "任渊TPA基岩版兼容插件"
-commands:
-  tpaui:
-    description: "打开tpaui"
-    usage: ""
+description: Tpa Form菜单支持
+website: https://rymc.ltd/
+folia-supported: true
 permissions:
-  tpaui.admin:
-    description: "tpaui主权限"
+  tpaform.reload:
+    description: "TpaForm重载权限"
     default: op
