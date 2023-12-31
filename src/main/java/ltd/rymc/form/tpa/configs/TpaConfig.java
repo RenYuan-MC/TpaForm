@@ -6,6 +6,8 @@ import space.arim.dazzleconf.annote.ConfHeader;
 import space.arim.dazzleconf.annote.ConfKey;
 import space.arim.dazzleconf.sorter.AnnotationBasedSorter;
 
+import java.util.List;
+
 @SuppressWarnings("unused")
 @ConfHeader("# 配置文件 TpaForm Config ver 2.0.0 by RENaa_FD")
 public interface TpaConfig {
@@ -34,8 +36,8 @@ public interface TpaConfig {
     @AnnotationBasedSorter.Order(20)
     boolean enableTpaHere();
 
-    @ConfDefault.DefaultString("tpa")
-    @ConfKey("tpa-command")
+    @ConfDefault.DefaultStrings({"tpa"})
+    @ConfKey("tpa-commands")
     @ConfComments({
             "",
             "# tpa相关的命令",
@@ -43,12 +45,12 @@ public interface TpaConfig {
             "# 示例: tpaccept %s"
     })
     @AnnotationBasedSorter.Order(30)
-    String tpaCommand();
+    List<String> tpaCommands();
 
-    @ConfDefault.DefaultString("tpahere")
-    @ConfKey("tpa-here-command")
+    @ConfDefault.DefaultStrings({"tpahere"})
+    @ConfKey("tpa-here-commands")
     @AnnotationBasedSorter.Order(40)
-    String tpaHereCommand();
+    List<String> tpaHereCommands();
 
     @ConfDefault.DefaultString("tpaccept")
     @ConfKey("tpa-accept-command")

@@ -34,7 +34,7 @@ public class TpaSendForm extends RCustomForm {
     @Override
     public void onValidResult(CustomForm form, CustomFormResponse response) {
 
-        String command = (response.asToggle(2) ? TpaForm.config().tpaHereCommand() : TpaForm.config().tpaCommand()) + " ";
+        String command = (response.asToggle(2) ? TpaForm.config().tpaHereCommands().get(0) : TpaForm.config().tpaCommands().get(0)) + " ";
         String input = response.asInput(1);
 
         String playerName;

@@ -31,6 +31,7 @@ public interface LangConfig {
     @ConfComments("\n# 传送选择菜单")
     @AnnotationBasedSorter.Order(40)
     String selectPlayers();
+
     @ConfDefault.DefaultString("玩家列表")
     @ConfKey("player-list")
     @AnnotationBasedSorter.Order(50)
