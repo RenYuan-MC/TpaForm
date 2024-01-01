@@ -33,7 +33,7 @@ public final class ConfigManager<C> {
                 configClass,
                 new ConfigurationOptions.Builder().sorter(new AnnotationBasedSorter()).build(),
                 yamlOptions);
-        return new ConfigManager<>(new ConfigurationHelper<>(configFolder, fileName, configFactory))    ;
+        return new ConfigManager<>(new ConfigurationHelper<>(configFolder, fileName, configFactory));
     }
 
     public void reloadConfig() {
@@ -47,7 +47,6 @@ public final class ConfigManager<C> {
             TpaForm.getInstance().getLogger().severe("The yaml syntax in your configuration is invalid. "
                                                      + "Check your YAML syntax with a tool such as https://yaml-online-parser.appspot.com/");
             ex.printStackTrace();
-
         } catch (InvalidConfigException ex) {
             configData = configHelper.getFactory().loadDefaults();
             TpaForm.getInstance().getLogger().severe("One of the values in your configuration is not valid. "

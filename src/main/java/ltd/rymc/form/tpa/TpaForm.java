@@ -20,8 +20,8 @@ public final class TpaForm extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        tpaConfigManager = ConfigManager.create(TpaForm.getInstance().getDataFolder().toPath(),"config.yml", TpaConfig.class);
-        langConfigManager = ConfigManager.create(TpaForm.getInstance().getDataFolder().toPath(), "lang.yml", LangConfig.class);
+        tpaConfigManager = ConfigManager.create(getDataFolder().toPath(),"config.yml", TpaConfig.class);
+        langConfigManager = ConfigManager.create(getDataFolder().toPath(), "lang.yml", LangConfig.class);
         reload();
 
         commandManager = new PaperCommandManager(this);

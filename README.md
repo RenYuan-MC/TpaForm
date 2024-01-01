@@ -13,3 +13,5 @@
 * [TPAPro](https://www.mcbbs.net/thread-904737-1-1.html) (需要从 [此处](https://raw.githubusercontent.com/RenYuan-MC/TpaForm/master/extensions/TpaForm-TpaProSupport.jar) 下载扩展以兼容其黑名单功能)
 ## 前置
 * Floodgate (2.2.0版本以上) - 用于基岩版菜单
+## 数据统计
+![](https://bstats.org/signatures/bukkit/BETpaForm.svg)
