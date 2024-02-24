@@ -3,7 +3,6 @@ package ltd.rymc.form.tpa.forms;
 import ltd.rymc.form.tpa.TpaForm;
 import ltd.rymc.form.tpa.form.RCustomForm;
 import ltd.rymc.form.tpa.form.RForm;
-import ltd.rymc.form.tpa.utils.ArraysUtils;
 import ltd.rymc.form.tpa.utils.InputUtils;
 import ltd.rymc.form.tpa.utils.PlayerUtils;
 import org.bukkit.Bukkit;
@@ -24,11 +23,7 @@ public class TpaSendForm extends RCustomForm {
     }
 
     private String[] getPlayerNameList(){
-        String[] players = PlayerUtils.getOnlinePlayerNameList();
-        players = ArraysUtils.rotate(players, 1);
-        players = ArraysUtils.arraysFilter(players, bukkitPlayer.getName());
-        players[0] = TpaForm.lang().selectPlayers();
-        return players;
+        return TpaForm.getRedis().listAll("mc.players").toArray(new String[0]);
     }
 
     @Override

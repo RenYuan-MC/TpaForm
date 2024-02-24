@@ -3,7 +3,10 @@ version: '${project.version}'
 main: ltd.rymc.form.tpa.TpaForm
 api-version: 1.13
 depend: [ floodgate ]
-authors: [ RENaa_FD ]
+softdepend:  [ XTLib ]
+authors:
+  - RENaa_FD
+  - xiantiao
 description: Tpa Form菜单支持
 website: https://rymc.ltd/
 folia-supported: true

@@ -105,5 +105,12 @@
             <version>1.3.0-M2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>fun.xiantiao</groupId>
+            <artifactId>XTLib</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/XTLib.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

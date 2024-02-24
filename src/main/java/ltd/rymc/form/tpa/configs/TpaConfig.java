@@ -9,7 +9,7 @@ import space.arim.dazzleconf.sorter.AnnotationBasedSorter;
 import java.util.List;
 
 @SuppressWarnings("unused")
-@ConfHeader("# 配置文件 TpaForm Config ver 2.0.0 by RENaa_FD")
+@ConfHeader("# 配置文件 TpaForm Config ver 2.1.0 by RENaa_FD,xiantiao")
 public interface TpaConfig {
 
     @ConfDefault.DefaultBoolean(false)
@@ -31,9 +31,52 @@ public interface TpaConfig {
     boolean metrics();
 
     @ConfDefault.DefaultBoolean(true)
+    @ConfKey("redis.host")
+    @ConfComments("\n# Redis的主机IP")
+    @ConfDefault.DefaultString("localhost")
+    @AnnotationBasedSorter.Order(21)
+    String redisHost();
+
+    @ConfDefault.DefaultBoolean(true)
+    @ConfKey("redis.Port")
+    @ConfComments("\n# Redis的主机端口")
+    @ConfDefault.DefaultInteger(6379)
+    @AnnotationBasedSorter.Order(22)
+    int redisPort();@ConfDefault.DefaultBoolean(true)
+
+    @ConfKey("redis.MaxTotal")
+    @ConfComments("\n# 看不懂不要动")
+    @ConfDefault.DefaultInteger(50)
+    @AnnotationBasedSorter.Order(23)
+    int redisMaxTotal();@ConfDefault.DefaultBoolean(true)
+
+    @ConfKey("redis.MaxIdle")
+    @ConfComments("\n# 看不懂不要动")
+    @ConfDefault.DefaultInteger(50)
+    @AnnotationBasedSorter.Order(24)
+    int redisMaxIdle();
+
+    @ConfKey("redis.User")
+    @ConfComments("\n# Redis的用户，其他用户必须填写密码")
+    @ConfDefault.DefaultString("default")
+    @AnnotationBasedSorter.Order(25)
+    String redisUser();
+
+    @ConfKey("redis.Password")
+    @ConfComments("\n# Redis的主机密码")
+    @AnnotationBasedSorter.Order(26)
+    String redisPassword();
+
+    @ConfKey("redis.DB")
+    @ConfComments("\n# Redis的主机数据库")
+    @ConfDefault.DefaultInteger(0)
+    @AnnotationBasedSorter.Order(27)
+    int redisDB();
+
+    @ConfDefault.DefaultBoolean(true)
     @ConfKey("enable-tpa-here")
     @ConfComments("\n# 启用TpaHere")
-    @AnnotationBasedSorter.Order(20)
+    @AnnotationBasedSorter.Order(28)
     boolean enableTpaHere();
 
     @ConfDefault.DefaultStrings({"tpa"})
